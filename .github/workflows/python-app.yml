@@ -20,18 +20,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Set output
-      id: vars
-      run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
-
     - name: Check output
-      run: echo ${{ steps.vars.outputs.short_ref }}
+      run: echo ${{ github.ref_name }}
     
     
     
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10"
-    - run: python code/${{ github.event.head_commit.message }}/run.py 
+#     - name: Set up Python 3.10
+#       uses: actions/setup-python@v4
+#       with:
+#         python-version: "3.10"
+#     - run: python code/${{ github.event.head_commit.message }}/run.py 
 
