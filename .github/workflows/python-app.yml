@@ -20,9 +20,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Set output
+      id: vars
+      run: echo ::set-output name=short_ref::${GITHUB_REF#refs/*/}
+
     - name: Check output
-      run: echo ${{ github.ref_name }}
-    
+      run: echo ${{ steps.vars.outputs.short_ref }}
     
     
 #     - name: Set up Python 3.10
