@@ -20,10 +20,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Check output
+    - name: Check pull_requ
       run: echo ${{ github.event.pull_request.head.ref }}
       
-    - name: Check output
+    - name: Check output head
       run: echo ${{ github.event.head.ref }}         
     
 #     - name: Set output
